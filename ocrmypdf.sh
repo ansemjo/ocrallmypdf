@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# Copyright (c) 2019 Anton Semjonov
+# Licensed under the MIT License
+
 # input and output
 INFILE=${1:?input file required}
 OUTDIR=${2:?output directory required}

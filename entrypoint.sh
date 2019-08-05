@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Copyright (c) 2019 Anton Semjonov
+# Licensed under the MIT License
+
 # install additional languages
 IFS=+ read -ra languages <<< "${OCR_LANGUAGE}"
 for pkg in "${languages[@]/#/tesseract-ocr-}"; do
