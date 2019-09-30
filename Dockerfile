@@ -25,4 +25,6 @@ ENV \
 COPY entrypoint.sh /entrypoint.sh
 COPY ocrmypdf.sh /ocrmypdf.sh
 RUN chmod +x /entrypoint.sh /ocrmypdf.sh
-ENTRYPOINT /entrypoint.sh
+
+# execute entrypoint which starts incrond
+ENTRYPOINT ["/entrypoint.sh"]
