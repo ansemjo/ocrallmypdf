@@ -9,7 +9,7 @@ on:
     - cron: "30 13 * * 1"
 
 env:
-  PLATFORMS: ${{ fromJSON('[ "linux/amd64", "linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64,linux/ppc64le" ]')[ github.event_name != 'pull_request' ] }}
+  PLATFORMS: ${{ fromJSON('[ "linux/amd64", "linux/amd64,linux/arm64" ]')[ github.event_name != 'pull_request' ] }}
   IMAGENAME: ocrallmypdf
   DEFAULT_TAG: latest
   #DOCKERHUB_USER
