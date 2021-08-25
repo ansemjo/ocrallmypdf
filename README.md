@@ -15,7 +15,7 @@ Use your container runtime of choice and run:
     docker run -d \
       -v /path/to/input:/input \
       -v /path/to/output:/output \
-      ansemjo/ocrallmypdf
+      ghcr.io/ansemjo/ocrallmypdf
 
 Existing files in the input directory are not processed. The processing only
 triggers on `CLOSE_WRITE` and `MOVED_TO` events.
