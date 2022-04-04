@@ -9,9 +9,10 @@ FROM jbarlow83/ocrmypdf
 # TODO: since ocrmypdf/OCRmyPDF 79382a6
 RUN apt-get update \
   && apt-get install -y wget task-spooler \
-  && export deb=incron_0.5.12-2_amd64.deb \
+  && export deb="incron_0.5.12-2_$(dpkg --print-architecture).deb" \
   && wget "http://ftp.debian.org/debian/pool/main/i/incron/$deb" \
-  && echo "eb94045f280c260a4b44ab28ccd9d63ecb40401cfdb3cd5c8cf4c45276d00837  $deb" | sha256sum -c \
+  && echo "eb94045f280c260a4b44ab28ccd9d63ecb40401cfdb3cd5c8cf4c45276d00837  incron_0.5.12-2_amd64.deb\\n868672a85c65579857868844052289577dc0b9ad3637b4427f987408963671ea  incron_0.5.12-2_arm64.deb" \
+  && echo "eb94045f280c260a4b44ab28ccd9d63ecb40401cfdb3cd5c8cf4c45276d00837  incron_0.5.12-2_amd64.deb\\n868672a85c65579857868844052289577dc0b9ad3637b4427f987408963671ea  incron_0.5.12-2_arm64.deb" | sha256sum -c --ignore-missing \
   && dpkg -i "$deb" \
   && rm -rf /var/lib/apt/lists/* "$deb"
 
