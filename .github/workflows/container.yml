@@ -68,7 +68,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v6.8.0
+        uses: docker/build-push-action@v6.9.0
         with:
           platforms: ${{ env.PLATFORMS }}
           push: ${{ github.event_name != 'pull_request' && steps.prep.outputs.head != 'devel' }}
